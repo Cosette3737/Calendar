@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Event Tracker
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>My Events</h1>
+      <p>List of events</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-4">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Create an Event</div>
+              <div class="panel-body">
+                <form id = "form-id">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Date</label>
+                        <input class="form-control" id="eventdate" type="text" placeholder="1/11/2011">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="date">Time</label>
+                        <input class="form-control" id="eventtime" type="text" placeholder="12:00">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="date">Event</label>
+                        <input class="form-control" id="eventinfo" type="text" placeholder="First Day of New Job">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="add-btn" type="button" class="btn btn-info btn-lg">Add Event</button>
+                  <button id="clear-btn" type="button" class="btn btn-info btn-lg">Clear Events</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-8">
+          <div id="table-area" class="">
+            <table id="ufo-table" width ="1100" class="table">
+              <thead>
+                <tr>
+                  <th class="table-head" >Day</th>
+                  <th class="table-head" >Time</th>
+                  <th class="table-head" >Event</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">Event Trapper Keeper</span>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+
+</html>
