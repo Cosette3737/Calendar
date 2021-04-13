@@ -24,13 +24,13 @@ var data = [{
 },
 ];
 //sort function for table
+
 function dynamicSort(property) {
   var sortOrder = 1;
   if(property[0] === "-") {
       sortOrder = -1;
       property = property.substr(1);
   }
-
   return function (a,b) {
       if(sortOrder == -1){
           return b[property].localeCompare(a[property]);
@@ -40,8 +40,10 @@ function dynamicSort(property) {
   }
 }
 //Complete event handler
+
 function runEnter() {
 //prevent page from refreshing
+ 
   d3.event.preventDefault();
     //select input from datetime entry
   let inputdate = d3.select("#datetime");
@@ -64,22 +66,33 @@ function runEnter() {
     eventInfo: (eventValue),
     datetime: (dateValueString)
               });
-  console.log(data);
+  //console.log(data);
   let newData = data.sort(dynamicSort("datetime"));
-  console.log(newData);
-  // myTime = new Date()
-  // alert("datetime");
-  // if (myTime >dateValue:
-  // Then alert("This event is overdue")
+  //console.log(newData);
   //clear table
   tbody.html("");
-  //run alert function
   //fill table
   newData.forEach((rowData) => { 
     let row = tbody.append("tr");
     Object.values(rowData).forEach((value) => {
       let cell = row.append("td");
       cell.text(value);
+      
     });
   })
-}
+setAlert();
+function setAlert () {
+  //console.log(newData[1].datetime);
+  myTime = new Date();
+  //console.log(new Date);
+  let i = 0;
+  while (i < newData.length) {
+   if ((Date.parse(myTime)) > (Date.parse(newData[i].datetime))){
+    alert(((`You missed this appointment: ` + newData[i].eventInfo +  ` at ` + newData[i].datetime)))
+   }else if ((Date.parse(myTime)) === (Date.parse(newData[i].datetime))){
+      console.log((newData[i].datetime, "You have an event now!"));
+   }else{
+      alert((newData[i].eventInfo + 'is scheduled'));
+    }
+    i++}
+  }}
