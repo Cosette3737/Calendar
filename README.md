@@ -2,7 +2,7 @@
 Schedule list with Alerts
 
 
-![Covid photo]()
+![Covid photo](https://raw.githubusercontent.com/Cosette3737/Calendar/main/static/tracker1.JPG)
 
 
 # Project Scope
